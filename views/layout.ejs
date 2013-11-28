@@ -1,0 +1,59 @@
+<html ng-app="angularfb">
+<head>
+    <title>Facebook app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Domine' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+    <script type="text/javascript">
+        FB_APP_NAME = '<%= appName %>';
+        FB_APP_ID   = '<%= appId %>' ;
+        FB_APP_URL  = '<%= appUrl %>';
+        FB_SCOPE    = '<%= scope %>';
+    </script>
+
+</head>
+
+<body ng-class="{'page-loader': !$root.user}">
+
+    <div ng-if="$root.user">
+        <%- include navigation %>
+        <%- body %>
+        <%- include footer %>
+    </div>
+    <div ng-if="!$root.user" ng-cloak>
+
+        <h2 class="text-center" ng-if="!auth.status">
+            <i class="icon-spin icon-spinner"></i> Loading...
+        </h2>
+
+        <a ng-if="auth.status && auth.status != 'connected'" class="fb-btn" ng-click="login()"></a>
+
+    </div>
+</body>
+
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<script src="/static/jquery/jquery.min.js"></script>
+<script src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/static/underscore/underscore-min.js"></script>
+<script src="/static/angular/angular.js"></script>
+<script src="/static/angular-resource/angular-resource.min.js"></script>
+<script src="/static/angular-route/angular-route.min.js"></script>
+
+<script src="/static/js/services.js?<%= random %>"></script>
+<script src="/static/js/filters.js?<%= random %>"></script>
+<script src="/static/js/controllers.js?<%= random %>"></script>
+<script src="/static/js/directives.js?<%= random %>"></script>
+<script src="/static/js/modules/friends.js?<%= random %>"></script>
+<script src="/static/js/application.js?<%= random %>"></script>
+</html>

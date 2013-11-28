@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div ng-repeat="friend in friends">
+
+              <h3>
+                <img ng-src="http://graph.facebook.com/{{ friend.id }}/picture" alt="{{ friend.name }}"/>
+                {{ friend.name }}
+              </h3>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "angular-fb",
+  "version": "0.0.1",
+  "main": "app.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "/",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~v1.2.0-rc.3",
+    "angular-route": "~1.2.0-rc.3",
+    "angular-resource": "v1.2.0-rc.3",
+    "underscore": "*",
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0",
+    "font-awesome": "~3.2.1"
+  }
+}
