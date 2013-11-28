@@ -1,3 +1,9 @@
+angularfb
+=========
+
+Facebook Login with Angular
+
+
 Installation
 ============
 
