@@ -1,20 +1,18 @@
 (function() {
     'use strict';
 
-    var deps = [
-        'ngRoute',
-        'ngResource',
-        'angularfb.filters',
-        'angularfb.controllers',
-        'angularfb.services',
-        'angularfb.directives',
-        'angularfb.friends',
-    ]
+    angular.module('angularfb', [
+            'ngRoute',
+            'ngResource',
+            'angularfb.filters',
+            'angularfb.controllers',
+            'angularfb.services',
+            'angularfb.directives',
+            'angularfb.friends'
+        ])
 
-    angular.module('angularfb', deps)
-
-    .config([ '$routeProvider', '$locationProvider', '$httpProvider',
-        function($routeProvider, $locationProvider, $httpProvider){
+    .config([ '$routeProvider', '$locationProvider',
+        function($routeProvider, $locationProvider){
             $locationProvider.html5Mode(true);
             $routeProvider
                 .when('/', {
@@ -24,7 +22,6 @@
 
                 .when('/logout', {
                     resolve: [ '$rootScope', 'API', '$location', function($rootScope, API, $location){
-                        console.log(API, $rootScope);
                         API.logout(function(){
                             console.log('Logout... redirecting...');
                             $location.path('/')

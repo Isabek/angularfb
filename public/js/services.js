@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module('angularfb.services', [ 'ngResource' ])
+
         .factory("API", [ '$rootScope', '$q', '$resource', '$location', '$exceptionHandler',
             function($rootScope, $q, $resource, $location, $exceptionHandler){
                 return  {

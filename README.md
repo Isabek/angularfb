@@ -1,13 +1,13 @@
 angularfb
 =========
 
-Facebook Login with Angular
+Bootstrap for using Angular.JS application with Facebook Login 
 
 
 Installation
 ============
 
-* set up the virtual host on your apache http-vhosts.conf file
+* set up the virtual host in http-vhosts.conf file (in case you're using apache)
 
 ```sh
 <VirtualHost *:80>
@@ -23,18 +23,22 @@ Installation
 </VirtualHost>
 ```
 * add `127.0.0.1    appname.dev` to your hosts file
-* run `npm install` within project directory
-* install [foreman](https://github.com/NodeFly/node-foreman) ` $ npm install -g foreman `
-* create ***.env*** file based on ***example.env***
-* start app by `foreman start`
+* run `$ npm install` within project directory
+* install foreman ` $ npm install -g foreman `  ([read more about foreman](https://github.com/NodeFly/node-foreman))
+* create ***.env*** file based on ***.env.example***
+* start app with `$ foreman start`
 
 ----------
+
+Deploying to Heroku - [RTFM#1!](https://devcenter.heroku.com/articles/getting-started-with-nodejs) && [RTFM#2!](https://devcenter.heroku.com/articles/config-vars)
+======
+
+----
 
 Adding front-end libraries
 ======
 ```sh
-bower install <package-name>
+bower install <package-name> --save
 ```
-
 ----------
 
