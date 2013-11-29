@@ -85,9 +85,10 @@
         });
 
 
-        $rootScope.$on('$routeChangeStart', function(next, current){
-            if ( !current.$$route )
-                current.templateUrl = '/partials/error';
+        $rootScope.$on('$routeChangeStart', function(event, next, current){
+            console.log(event, next, current);
+            if ( !next.$$route )
+                next.templateUrl = '/partials/error';
         })
 
     }])
