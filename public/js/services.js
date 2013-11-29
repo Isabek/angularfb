@@ -1,10 +1,10 @@
 (function(){
     'use strict';
 
-    angular.module('angularfb.services', [ 'ngResource' ])
+    angular.module('angularfb.services', [])
 
-        .factory("API", [ '$rootScope', '$q', '$resource', '$location', '$exceptionHandler',
-            function($rootScope, $q, $resource, $location, $exceptionHandler){
+        .factory("API", [ '$rootScope', '$q', '$location', '$exceptionHandler',
+            function($rootScope, $q, $location, $exceptionHandler){
                 return  {
                     me: function(){
                         var def = $q.defer();

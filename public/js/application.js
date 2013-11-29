@@ -46,7 +46,7 @@
         console.log('RUN!');
 
         $rootScope.login = function(){
-            API.login(function(resp){
+            API.login(function(){
                 console.log("Logged in. Redirecting...")
                 $location.path('/');
             }, function(){
@@ -56,7 +56,7 @@
 
         API.getLoginStatus(
             function( response ){
-                console.info("Authorized:", response )
+                console.info("Authorized:", response)
             },
             function( response ){
                 console.error("Not authorized:", response)
